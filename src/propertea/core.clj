@@ -5,7 +5,7 @@
 
 (defn keywordize-keys-unless [m b]
   (if b
-    m
+    (clojure.walk/stringify-keys m)
     (clojure.walk/keywordize-keys m)))
 
 (defn dash-match [[ _ g1 g2]]
